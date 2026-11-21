@@ -1,7 +1,9 @@
 {
   "name": "buzzputt-plugins",
-  "description": "Three standalone skills: image-smith, sift-the-web, and elicit.",
-  "owner": { "name": "buzzputt" },
+  "description": "Standalone skills: image-smith, sift-the-web, elicit, and osu-pattern-lab.",
+  "owner": {
+    "name": "buzzputt"
+  },
   "plugins": [
     {
       "name": "image-smith",
@@ -9,7 +11,9 @@
       "description": "Human-in-the-loop workshop for creating and refining image-generation and editing prompts.",
       "version": "1",
       "strict": false,
-      "skills": ["./"]
+      "skills": [
+        "./"
+      ]
     },
     {
       "name": "sift-the-web",
@@ -17,7 +21,9 @@
       "description": "Refine questions into targeted searches, skip blocklisted domains, and return answers with source-quality notes.",
       "version": "1",
       "strict": false,
-      "skills": ["./"]
+      "skills": [
+        "./"
+      ]
     },
     {
       "name": "elicit",
@@ -25,7 +31,19 @@
       "description": "Ask a few focused questions about the person's core intent before starting a vague or costly request.",
       "version": "1",
       "strict": false,
-      "skills": ["./"]
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "osu-pattern-lab",
+      "source": "./osu-pattern-lab",
+      "description": "Build a personal osu!standard pattern library from uploaded beatmaps and get pattern ideas from natural-language vibe requests.",
+      "version": "1",
+      "strict": false,
+      "skills": [
+        "./"
+      ]
     }
   ]
 }
