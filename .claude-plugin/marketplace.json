@@ -1,0 +1,31 @@
+{
+  "name": "buzzputt-plugins",
+  "description": "Three standalone skills: image-smith, sift-the-web, and elicit.",
+  "owner": { "name": "buzzputt" },
+  "plugins": [
+    {
+      "name": "image-smith",
+      "source": "./image-smith",
+      "description": "Human-in-the-loop workshop for creating and refining image-generation and editing prompts.",
+      "version": "1",
+      "strict": false,
+      "skills": ["./"]
+    },
+    {
+      "name": "sift-the-web",
+      "source": "./sift-the-web",
+      "description": "Refine questions into targeted searches, skip blocklisted domains, and return answers with source-quality notes.",
+      "version": "1",
+      "strict": false,
+      "skills": ["./"]
+    },
+    {
+      "name": "elicit",
+      "source": "./elicit",
+      "description": "Ask a few focused questions about the person's core intent before starting a vague or costly request.",
+      "version": "1",
+      "strict": false,
+      "skills": ["./"]
+    }
+  ]
+}

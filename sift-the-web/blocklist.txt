@@ -1,0 +1,38 @@
+# sift-the-web blocklist
+# One entry per line, nothing else on the line (no notes). Blank lines and # lines are ignored.
+# Plain domain: lowercase, no https://, no www. (blocks its subdomains too, never its parent). Example: example.com
+# Wildcard (final resort): * matches any characters in the hostname. Example: bestof*reviews.com
+# Blocked entries are always skipped.
+# Paste the "Sites to watch out for" block from an answer below this line.
+gamersdecide.com
+rickyspears.com
+resources.oreate.ai
+farmgolds.com
+nostalgie.sytes.net
+orbispatches.com
+cloud.motorsport.unibo.it
+mail.infosecinstitute.com
+evri-delivery.blogto.com
+erp.blackboxoperations.com
+speedcheckonline.com
+gorillacasestore.com
+dev.igeeksblog.com
+pelicaan.it.com
+expertbeacon.com
+results.microstart.be
+status.penumbra.zone
+dtgre.com
+ludo.guide
+cyberpost.co
+shapes.inc
+wpgatsby.develop.propertystream.co
+dr-xm.saas.infor.com
+phoneaqua.com
+gadreview.com
+turbovs.com
+mobileana.com
+sophiecress.com
+allbestoffersnow.blogspot.com
+scale.jobs
+digitalbiztalk.com
+lifa-su.github.io
