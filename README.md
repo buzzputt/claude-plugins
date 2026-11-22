@@ -28,14 +28,31 @@ Then install any plugin:
 ## Layout
 
 ```
-.claude-plugin/marketplace.json   the list of plugins
-elicit/                           one folder per plugin
-image-smith/
-sift-the-web/
-osu-pattern-lab/
+.
+├── .claude-plugin/
+│   └── marketplace.json      the list of plugins
+├── elicit/
+│   └── SKILL.md
+├── image-smith/
+│   └── SKILL.md
+├── sift-the-web/
+│   ├── SKILL.md
+│   └── blocklist.txt
+├── osu-pattern-lab/
+│   ├── SKILL.md
+│   ├── references/
+│   │   ├── schema.md
+│   │   └── vibe-to-features.md
+│   └── scripts/
+│       ├── card.py
+│       ├── ingest.py
+│       ├── library.py
+│       ├── mutate.py
+│       ├── osu_lib.py
+│       └── search.py
+├── LICENSE
+└── README.md
 ```
-
-Each folder holds a `SKILL.md`, plus any scripts or reference files that skill needs.
 
 ## License
 
