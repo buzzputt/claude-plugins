@@ -18,8 +18,8 @@
     {
       "name": "sift-the-web",
       "source": "./sift-the-web",
-      "description": "Refine questions into targeted searches, skip blocklisted domains, and return answers with source-quality notes.",
-      "version": "1",
+      "description": "Search the web smarter, skip junk and blocklisted sites, and get answers with source-quality notes. Runs only on /sift-the-web.",
+      "version": "2",
       "strict": false,
       "skills": [
         "./"

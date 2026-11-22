@@ -22,7 +22,7 @@ Then install any plugin:
 |---|---|---|
 | `elicit` | Asks a few short questions to find out what you really want before starting. | `/elicit`, or "ask me questions" |
 | `image-smith` | A workshop for writing and refining image-generation and image-editing prompts. | `/image-smith` |
-| `sift-the-web` | Turns your question into better searches, skips junk domains, and tells you how solid the answer is. | Ask a web question |
+| `sift-the-web` | Turns your question into better searches, skips junk domains, and tells you how solid the answer is. | `/sift-the-web <your question>` (command only) |
 | `osu-pattern-lab` | Builds a personal osu!standard pattern library from your beatmaps and suggests patterns from a plain-language vibe. | Upload beatmaps, then describe the feel you want |
 
 ## Layout
