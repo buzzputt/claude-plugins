@@ -1,98 +1,85 @@
 ---
 name: elicit
-description: Ask a few focused questions about the person's core intent via the question widgets. Use on /elicit, on "ask me questions", "interview me", "clarify what I want", or when a request is too vague to start or costly to guess. Skip when the request is clear.
+description: Ask a few short questions to find out what the person really wants, using the question widgets. Use on /elicit, on "ask me questions", "interview me", "clarify what I want", or when a request is too vague to start or too costly to guess. Skip it when the request is clear.
 ---
 
 # /elicit
 
-Get to the person's intent with a few focused questions. Ask about the core, not the edges.
+Find out what the person really wants by asking a few short questions. Ask about the big things, not the small ones.
 
-Many questions from many angles tire people out. They answer the first few well, then start clicking anything. Four good questions beat fourteen mediocre ones.
-
-## The ten words
-
-Every question set should be all of these:
-
-| Word | In practice |
-|---|---|
-| Focused | One intent per set. Everything asked serves it. |
-| Essential | Ask only what would change what you build. |
-| Targeted | Each question hits one specific unknown. |
-| Core | Go for goal, audience, and shape. Skip trivia. |
-| Concise | Short question. Short options. No preamble. |
-| Purposeful | You can say why each question exists. |
-| Pointed | Closed choices with a clear fork, not open mush. |
-| Lean | 1 to 4 questions. Usually 3. |
-| Central | Start with the one that matters most. |
-| Distilled | Boil the request down first, then ask. |
+Too many questions wear people out. They answer the first few with care, then click anything to get done. Four good questions beat fourteen weak ones. Keep it short: 1 to 4 questions, usually 3.
 
 ## Steps
 
-### 1. Infer first
+### 1. Work out what you can first
 
-Read the conversation, attachments, and anything already said. Throw out every question you can answer yourself. If nothing is left, skip asking and start the work. Say in one line what you assumed.
+Read the chat, any attached files, and everything the person already said. Cross off every question you can answer yourself. Only ask what would change what you make. If nothing is left, skip the questions and start the work. Say in one line what you assumed.
 
-### 2. Distill the intent
+### 2. Boil the request down
 
-Name the request in one sentence. Then find the core areas where a wrong guess would ruin the result. Most intents have three:
+Say what the person wants in one sentence. Everything you ask should help with that one thing.
 
-- **Outcome**: what should exist at the end?
-- **Use**: who or what is it for?
-- **Shape**: the one constraint that bounds it (length, format, tone, budget, deadline).
+Then look for the big gaps, the places where a wrong guess would ruin the result. Most requests have three:
 
-Pick the areas that are actually unknown. Drop the rest. One question per area. Never ask two questions about the same area from different angles.
+- **Outcome**: what should exist when you are done?
+- **Use**: who is it for, or what is it for?
+- **Shape**: the one limit that matters most (length, format, tone, budget, deadline).
+
+Only ask about gaps that are really open. Skip the rest. Ask one question per gap, and never ask about the same gap twice in different words. For each question, you should be able to say why you are asking it. If you can't, drop it.
 
 ### 3. Pick the widget
 
-Match the widget to the answer type. Use the strongest one that fits, and no more than one per round.
+Pick the widget that fits the kind of answer. Use one widget per round.
 
-**AskUserQuestion** is the default. Use it for any choice among 2 to 4 options.
-- Put the recommended option first and tag it `(Recommended)`. This lets the person say yes quickly.
-- Keep `header` to a word or two. It is a chip, so it should name the core area (Outcome, Audience, Format).
-- Add a short `description` to an option only when the label alone is ambiguous.
-- Use `multiSelect: true` only when options truly stack, like "which of these matter".
-- Use `preview` when options are easier to judge by seeing them: a layout sketch, a code shape, a sample sentence in each tone. Show, don't explain.
-- Never add an "Other" option. The widget adds it.
-- Ask up to 4 questions in one call. One call, one round.
+**AskUserQuestion** is the one to use most of the time. Use it when the person is choosing between 2 to 4 options.
+- Put the option you recommend first and add `(Recommended)` to it. That way the person can just say yes.
+- Keep `header` to one or two words. It shows as a small tag, so name the gap (Outcome, Audience, Format).
+- Add a short `description` to an option only when the label alone is unclear.
+- Use `multiSelect: true` only when people can pick more than one, like "which of these matter".
+- Use `preview` when it is easier to choose by looking: a rough layout, a bit of code, a sample sentence in each tone. Show it, don't explain it.
+- Don't add an "Other" option. The widget adds one for you.
+- You can ask up to 4 questions in one call. One call is one round.
 
-**Visualizer elicitation form** is for answers that are not just choices: a date, a slider, a file upload, free text next to choices, or a picker where cards or preview tiles beat chips.
-- Load the `elicitation` module of `mcp__visualize__read_me` first, silently, then call `mcp__visualize__show_widget`.
-- Follow the module's rules: header title is "[subject] details", questions are phrased as questions, zero scripts, no restyled chrome.
-- Vary the formats. With three or more choice groups, make at least one cards or tiles. Use a slider instead of "1 to 5" pills. Use a dropzone with a textarea fallback when a file could help.
-- Keep it to the same 1 to 4 groups. A bigger form is not a better form.
-- The answers come back as your next message. Parse them and go.
+**Visualizer elicitation form** is for answers that are more than a pick from a list: a date, a slider, a file upload, free text next to choices, or cards that work better than tags.
+- Before you use it, quietly load the `elicitation` module of `mcp__visualize__read_me`, then call `mcp__visualize__show_widget`.
+- Follow the module's rules: the title is "[subject] details", each item is worded as a question, no scripts, and no custom styling on the frame.
+- Mix up the formats. If there are three or more groups of choices, make at least one of them cards or tiles. Use a slider instead of "1 to 5" buttons. Use a file drop box with a text box as a backup when a file could help.
+- Keep it to 1 to 4 groups. A longer form is not a better form.
+- The answers come back as the next message. Read them and carry on.
 
-**Display widgets** (comparison card, product carousel, places map, image search) are not input widgets. Use one only when the person cannot choose well without seeing real options. Show the options first, then ask the single deciding question with AskUserQuestion. Skip them when words will do.
+**Display widgets** (comparison card, product carousel, places map, image search) don't collect answers. Use one only when the person can't choose well without seeing real options. Show the options first, then ask the one question that decides it with AskUserQuestion. If words are enough, skip them.
 
-Not relevant here: the quiz widget (it grades knowledge, it doesn't collect preferences), the options card (health topics only), and the message composer.
+Don't use these here: the quiz widget (it tests what people know, it doesn't collect what they want), the options card (health topics only), and the message composer.
 
 ### 4. Write the questions
 
-- Phrase each as a question from you, not a field label. "Who is this for?" beats "Audience:".
-- Options are real forks. Two options that mean the same thing is one option.
-- Make the recommended option a good guess, so a lazy yes still lands somewhere useful.
-- No question that restates what the person already said.
-- No "anything else?" catch-all. The "Other" path covers it.
+- Word each one as a question from you, not a label on a form. "Who is this for?" is better than "Audience:".
+- Keep each question and option short. No long intro.
+- Give real choices with a clear difference. If two options mean the same thing, they are one option.
+- Put the most important question first.
+- Make the recommended option a good guess, so a quick "yes" still gets a useful result.
+- Don't ask about something the person already told you.
+- Don't end with "anything else?". The "Other" choice already covers it.
 
-### 5. Act on the answers
+### 5. Use the answers
 
-Proceed right away. Don't ask a second round unless an answer opens a fork that changes the work, and then ask one question, not a new list. If the person skips, take the recommended options, say so in one line, and go.
+Get to work right away. Don't ask a second round unless an answer opens a new fork that changes the work. If it does, ask one question, not a new list. If the person skips the questions, go with the recommended options, say so in one line, and get started.
 
-## Unattended runs
+## When nobody is there
 
-If nobody is watching (scheduled run, person stepped away), don't ask. Take the most reasonable reading, say which one at the top of the work, and carry on.
+If no one is watching (a scheduled run, or the person has stepped away), don't ask. Pick the most likely meaning, say which one you picked at the top of your work, and keep going.
 
-## Quick example
+## Example
 
 Request: "help me with a launch announcement"
 
-Inferred: nothing about product, channel, or tone is known.
+What you can tell: nothing about the product, where it will go, or the tone.
 
-Distilled intent: write a launch announcement. Core unknowns are audience, channel, and tone. Product details can come from a quick follow-up or the person's files.
+What it boils down to: write a launch announcement. The big gaps are the audience, the channel, and the tone. You can get product details later, from a quick follow-up or the person's files.
 
-AskUserQuestion with 3 questions:
+Ask with AskUserQuestion, 3 questions:
 1. Audience: Customers (Recommended) / Internal team / Press / Investors
 2. Channel: Email / Blog post / Social / Slack
-3. Tone, with a `preview` of one sample opening line per option: Warm / Direct / Playful
+3. Tone, with a `preview` of one sample opening line for each option: Warm / Direct / Playful
 
-Three questions, three core areas, one round. Then write it.
+Three questions, three big gaps, one round. Then write it.
