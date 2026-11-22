@@ -9,7 +9,7 @@
       "name": "image-smith",
       "source": "./image-smith",
       "description": "Human-in-the-loop workshop for creating and refining image-generation and editing prompts.",
-      "version": "1",
+      "version": "2",
       "strict": false,
       "skills": [
         "./"
@@ -29,7 +29,7 @@
       "name": "elicit",
       "source": "./elicit",
       "description": "Ask a few focused questions about the person's core intent before starting a vague or costly request.",
-      "version": "1",
+      "version": "2",
       "strict": false,
       "skills": [
         "./"
